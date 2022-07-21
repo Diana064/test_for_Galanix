@@ -1,0 +1,242 @@
+:root {
+	--main-font-family: 'Edu VIC WA NT Beginner', cursive;
+	--second-font-family: 'Ibarra Real Nova', serif;
+	--main-text-color: black;
+	--blue: #7de9fa;
+	--yelow: #f8fa7d;
+	--red: #eb1515;
+	--white: white;
+}
+body {
+	font-family: var(--main-font-family);
+	color: var(--main-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
+img {
+	display: block;
+	height: auto;
+}
+a {
+	text-decoration: 0;
+}
+ul {
+	padding: 0;
+	list-style: none;
+}
+/* flags */
+.task {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.task__subtitle {
+	font-family: var(--second-font-family);
+	text-transform: uppercase;
+}
+.task-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+.flag {
+}
+.flag__country {
+	height: 200px;
+	background-color: antiquewhite;
+	width: 300px;
+	border: 2px solid var(--main-text-color);
+}
+.flag__title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: 50px;
+	color: var(--main-text-color);
+	text-transform: uppercase;
+}
+.ukraine {
+	transition-duration: 1000ms;
+	background: linear-gradient(
+		to bottom,
+		var(--blue) 25% 50%,
+		var(--yelow) 50% 100%
+	);
+	transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ukraine:hover {
+	transform: rotate(1turn);
+	background: linear-gradient(
+		to bottom,
+		var(--red) 25% 50%,
+		var(--main-text-color) 50% 100%
+	);
+}
+.ukraine__title {
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-image: linear-gradient(
+		to bottom,
+		var(--yelow) 25% 50%,
+		var(--blue) 50% 100%
+	);
+	transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ukraine:hover .ukraine__title {
+	background-image: linear-gradient(
+		to bottom,
+		var(--main-text-color) 25% 50%,
+		var(--red) 50% 100%
+	);
+}
+.japan {
+	position: relative;
+	background-color: var(--white);
+}
+.japan__title {
+	justify-content: flex-end;
+	align-items: flex-start;
+
+	font-size: 30px;
+
+	padding-right: 25px;
+	padding-top: 25px;
+	z-index: -1;
+
+	transition: color 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.japan::before {
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color: var(--red);
+	top: 50%;
+	left: 25px;
+	transform: translate(0, -50%);
+	z-index: -1;
+
+	transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.japan:hover.japan::before {
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+}
+.japan:hover .japan__title {
+	color: var(--red);
+}
+.iceland {
+	position: relative;
+	background-image: linear-gradient(
+		to right,
+		blue 10%,
+		white 10% 15%,
+		red 15% 35%,
+		white 35% 40%,
+		blue 40% 100%
+	);
+	transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.iceland__title {
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	background-image: linear-gradient(
+		to bottom,
+		transparent 35%,
+		white 35% 40%,
+		red 40% 60%,
+		white 60% 65%,
+		transparent 65% 100%
+	);
+}
+
+.iceland__title::before {
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 196px;
+	background-color: red;
+	left: 44px;
+	top: 0;
+}
+.iceland__title::after {
+	content: 'iceland';
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	color: transparent;
+	font-weight: bold;
+	transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.iceland:hover .iceland__title::after {
+	color: var(--white);
+}
+.czech-republic {
+	overflow: hidden;
+	position: relative;
+	background: linear-gradient(
+		to bottom,
+		var(--white) 25% 50%,
+		var(--red) 50% 100%
+	);
+}
+.czech-republic::before {
+	content: '';
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	color: var(--red);
+	font-weight: bold;
+	border: 100px solid transparent;
+	border-left: 0px solid blue;
+	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.czech-republic::after {
+	content: 'czech-republic';
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	font-size: 18px;
+	text-transform: uppercase;
+	top: -10px;
+	left: 101%;
+	color: var(--main-text-color);
+	font-weight: bold;
+	border: 100px solid transparent;
+	border-left: 0px solid blue;
+	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);  */
+.czech-republic:hover.czech-republic::before {
+	border-left: 120px solid blue;
+}
+.czech-republic:hover.czech-republic::after {
+	left: 50%;
+}
